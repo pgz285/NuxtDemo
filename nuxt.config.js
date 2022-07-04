@@ -1,5 +1,10 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env: {
+    API:process.env.API,
+    IMG: process.env.IMG,
+    WS:process.env.WS,
+  },
   head: {
     title: 'NuxtDemo',
     htmlAttrs: {
@@ -18,12 +23,11 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "assets/css/default.css", 'swiper/css/swiper.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
+  plugins: ['~/plugins/i18n.js', '@/plugins/bus','@/plugins/swiper'],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -36,6 +40,18 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  router: {
+    middleware: 'i18n',
+    scrollBehavior (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
+  },
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    vendor: ['vue-i18n'],
+  },
+  loading: {
+    color: '#1bbfb4',
+    height: '3px'
   }
 }

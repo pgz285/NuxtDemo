@@ -1,17 +1,22 @@
 {
-  "name": "NuxtDemo",
+  "name": "nuxtdemo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "WS=https://xxxx.com:8081 API=https://demopro.com IMG=https://testpro.com/static  nuxt",
+    "build": "WS=https://xxxx.com:8086 API=https://pro.com IMG=https://testpro.com/image nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "core-js": "^3.19.3",
+    "js-sha3": "^0.8.0",
     "nuxt": "^2.15.8",
+    "swiper": "5.2.0",
     "vue": "^2.6.14",
+    "vue-awesome-swiper": "4.1.1",
+    "vue-i18n": "8.9.0",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
