@@ -10,13 +10,15 @@
                         <div class="row slgap6 hor-center">
                             <SearchItem />
                             <div class="href row slgap2">
-                                <div class="label">推广合作</div>
+                                <div class="label" @click="tip()">推广合作</div>
                                 <div class="label" @click="go('/apply')">申请加盟</div>
                             </div>
 
                             <div class="right-icon row slgap2" v-if="!user" @click="login()">
                                 <!-- <img class="icon" src="@/assets/new/user.svg" alt /> -->
-                                <img class="icon" src="https://testimg.togather.pro//resize/brand/product/img/6882176779889410142?w=940&h=650" alt />
+                                <img class="icon"
+                                    src="https://testimg.togather.pro//resize/brand/product/img/6882176779889410142?w=940&h=650"
+                                    alt />
                             </div>
                             <div v-if="user" class="row hor-center slgaph1" @click="go('/user')">
                                 <img class="stamp" :onerror="errorImage"
@@ -50,8 +52,12 @@ export default {
         }
     },
     methods: {
-        search(e){
-             this.$router.push(`/search?q=&t=${e}`);
+        tip() {
+            this.$EventBus.$emit("tip", ["1200", "success", "点击了推广合作"]);
+        },
+
+        search(e) {
+            this.$router.push(`/search?q=&t=${e}`);
         },
         login() {
             this.$EventBus.$emit("loginPopup");
@@ -148,5 +154,4 @@ export default {
     border-radius: 50%;
     cursor: pointer;
 }
-
 </style>

@@ -6,7 +6,7 @@
                     <img src="@/assets/common/success.svg" alt="" v-if="data[1] == 'success'" />
                     <img src="@/assets/common/error.svg" alt="" v-else />
                     <div class="content both-center col stgap2">
-                        <div class="">{{data[2]}}</div>
+                        <div class="">{{ data[2] }}</div>
                     </div>
                 </div>
             </div>
@@ -24,11 +24,12 @@ export default {
         }
     },
     created() {
+
         this.$EventBus.$on("tip", (msg) => {
-          
-            this.tipOpen = true
+
             this.data = msg
-            
+            this.tipOpen = true
+
             setTimeout(() => {
                 this.tipOpen = false;
             }, msg[0]);
@@ -36,14 +37,14 @@ export default {
     },
     beforeDestroy() {
         this.$EventBus.$off("tip");
-    },
+    }
 }
 </script>
 
 <style scoped>
 .tip {
     position: fixed;
-    top: 40px;
+    top: 45px;
     right: 0;
     bottom: 0;
     left: 0;

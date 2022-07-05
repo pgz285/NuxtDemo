@@ -115,7 +115,7 @@ export default {
 }
 
 .indexmain-sticky {
-    /* position: sticky; */
+    position: sticky;
     top: 0px;
     height: 95px;
     background: white;
