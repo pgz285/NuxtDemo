@@ -41,6 +41,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   router: {
+    //应用到每个页面
     middleware: 'i18n',
     scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 0 }
@@ -48,6 +49,7 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    //添加vue-i18n模块，减少应用 bundle 的体积
     vendor: ['vue-i18n'],
   },
   loading: {

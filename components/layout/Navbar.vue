@@ -10,19 +10,23 @@
                         <div class="row slgap6 hor-center">
                             <SearchItem />
                             <div class="href row slgap2">
-                                <div class="label" @click="tip()">推广合作</div>
-                                <div class="label" @click="go('/apply')">申请加盟</div>
+                                <div class="label" @click="tip()">{{ $t("nav-bar.promotion") }}</div>
+                                <div class="label" @click="go('/apply')">{{ $t("nav-bar.join") }}</div>
                             </div>
 
-                            <div class="right-icon row slgap2" v-if="!user" @click="login()">
-                                <!-- <img class="icon" src="@/assets/new/user.svg" alt /> -->
-                                <img class="icon"
-                                    src="https://testimg.togather.pro//resize/brand/product/img/6882176779889410142?w=940&h=650"
-                                    alt />
-                            </div>
-                            <div v-if="user" class="row hor-center slgaph1" @click="go('/user')">
-                                <img class="stamp" :onerror="errorImage"
-                                    :src="`https://api.foshanlepin.com/upload/user/${user.icon}`" loading="lazy">
+
+                            <div class="row slgaph2 hor-center ml-2">
+                                <SwitchLang />
+                                <div class="right-icon row slgap2" v-if="!user" @click="login()">
+                                    <!-- <img class="icon" src="@/assets/new/user.svg" alt /> -->
+                                    <img class="icon"
+                                        src="https://testimg.togather.pro//resize/brand/product/img/6882176779889410142?w=940&h=650"
+                                        alt />
+                                </div>
+                                <div v-if="user" class="row hor-center slgaph1" @click="go('/user')">
+                                    <img class="stamp" :onerror="errorImage"
+                                        :src="`https://api.foshanlepin.com/upload/user/${user.icon}`" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -36,9 +40,10 @@
 import Axios from "axios";
 
 import SearchItem from "../common/SearchItem.vue"
+import SwitchLang from '../SwitchLang.vue';
 export default {
     name: "Navbar",
-    components: { SearchItem },
+    components: { SearchItem, SwitchLang },
     data() {
         return {
             sort: [],
@@ -128,6 +133,7 @@ export default {
     line-height: 18px;
     font-weight: thin;
     cursor: pointer;
+    min-width: 80px;
 }
 
 .label:hover {
@@ -153,5 +159,8 @@ export default {
     height: 36px;
     border-radius: 50%;
     cursor: pointer;
+}
+.ml-2{
+    margin-left: 20px;
 }
 </style>

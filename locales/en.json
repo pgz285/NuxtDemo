@@ -1,6 +1,10 @@
 {
   "language": "Language",
   "languages": "EN",
-  "login":"Login",
-  "searchtip": "Discover Brands with keywords"
+  "login": "Login",
+  "nav-bar": {
+    "searchtip": "Search",
+    "promotion": "Cooperate",
+    "join":"Joining us"
+  }
 }

@@ -1,6 +1,10 @@
 {
-  "language": "語言",
-  "languages": "繁中",
-  "login":"登錄",
-  "searchtip": "利用關鍵字搜尋"
+  "language": "语言",
+  "languages": "中文",
+  "login":"登录",
+  "nav-bar": {
+    "searchtip": "关键字搜索",
+    "promotion": "推广合作",
+    "join":"申请加盟"
+  }
 }

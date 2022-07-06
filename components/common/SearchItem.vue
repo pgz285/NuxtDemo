@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <div class="search-body relative hor-center">
-            <input type="text" class="input" v-model="q" placeholder="Search" @keyup.enter="go()">
+            <input type="text" class="input" v-model="q" :placeholder="$t('nav-bar.searchtip')" @keyup.enter="go()">
             <img class="search-icon" @click="go()" src="@/assets/new/searchIcon.svg" alt="">
         </div>   </div>
 </template>

@@ -8,23 +8,20 @@
                     <img class="search-icon" @click="search()" src="@/assets/new/searchIcon.svg" alt />
                 </div>
             </div>
-            <!-- <div class="menu row slgap5">
-                <div class="tab-label active">首页</div>
-                <div class="tab-label">官方推荐</div>
-                <div class="tab-label">最新发布</div>
-                <div class="tab-label">查看更多</div>
-            </div> -->
+            
             <div class="nav-right row slgap2 hor-center">
                 <div class="label" @click="go('/apply')">申请加盟</div>
                 <img v-if="!user" class="icon" @click="login()" src="@/assets/new/user.svg" alt />
                 <img class="stamp" v-if="user" @click="go('/user')" :onerror="errorImage"
                     :src="`https://api.foshanlepin.com/upload/user/${user.icon}`" loading="lazy">
+                <SwitchLang />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import SwitchLang from '../SwitchLang.vue';
 export default {
     name: "NavbarFix",
     data() {
@@ -34,6 +31,9 @@ export default {
         }
     },
     props: ['user'],
+    components:{
+        SwitchLang
+    },
     methods: {
         login() {
             this.$EventBus.$emit("loginPopup");
